@@ -1,0 +1,765 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D6DD0E272ED128B200CB7F23 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DD0DEA2ED1247700CB7F23 /* WidgetKit.framework */; };
+		D6DD0E282ED128B200CB7F23 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DD0DEC2ED1247700CB7F23 /* SwiftUI.framework */; };
+		D6DD0E432ED41FDC00CB7F23 /* MoodGearWidgetExtension.appex in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6DD0E262ED128B200CB7F23 /* MoodGearWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6DD0DC82ED1245C00CB7F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6DD0DB22ED1245A00CB7F23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6DD0DB92ED1245B00CB7F23;
+			remoteInfo = "MoodTrackerApp Watch App";
+		};
+		D6DD0DD22ED1245C00CB7F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6DD0DB22ED1245A00CB7F23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6DD0DB92ED1245B00CB7F23;
+			remoteInfo = "MoodTrackerApp Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D6DD0E422ED41FB500CB7F23 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D6DD0E432ED41FDC00CB7F23 /* MoodGearWidgetExtension.appex in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D6DD0DBA2ED1245B00CB7F23 /* MoodTrackerApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoodTrackerApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6DD0DC72ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoodTrackerApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6DD0DD12ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoodTrackerApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6DD0DEA2ED1247700CB7F23 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D6DD0DEC2ED1247700CB7F23 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D6DD0E052ED125AF00CB7F23 /* MoodGearWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodGearWidgetExtension.entitlements; sourceTree = "<group>"; };
+		D6DD0E262ED128B200CB7F23 /* MoodGearWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoodGearWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D6DD0E352ED128B400CB7F23 /* Exceptions for "MoodGearWidget" folder in "MoodGearWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D6DD0E252ED128B200CB7F23 /* MoodGearWidgetExtension */;
+		};
+		D6DD0E3B2ED12B1D00CB7F23 /* Exceptions for "MoodTrackerApp Watch App" folder in "MoodGearWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mood.swift,
+				MoodGearView.swift,
+				MoodManager.swift,
+			);
+			target = D6DD0E252ED128B200CB7F23 /* MoodGearWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D6DD0DBC2ED1245B00CB7F23 /* MoodTrackerApp Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D6DD0E3B2ED12B1D00CB7F23 /* Exceptions for "MoodTrackerApp Watch App" folder in "MoodGearWidgetExtension" target */,
+			);
+			path = "MoodTrackerApp Watch App";
+			sourceTree = "<group>";
+		};
+		D6DD0DCA2ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "MoodTrackerApp Watch AppTests";
+			sourceTree = "<group>";
+		};
+		D6DD0DD42ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "MoodTrackerApp Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		D6DD0E292ED128B200CB7F23 /* MoodGearWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D6DD0E352ED128B400CB7F23 /* Exceptions for "MoodGearWidget" folder in "MoodGearWidgetExtension" target */,
+			);
+			path = MoodGearWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D6DD0DB72ED1245B00CB7F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0DC42ED1245C00CB7F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0DCE2ED1245C00CB7F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0E232ED128B200CB7F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6DD0E282ED128B200CB7F23 /* SwiftUI.framework in Frameworks */,
+				D6DD0E272ED128B200CB7F23 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D6DD0DB12ED1245A00CB7F23 = {
+			isa = PBXGroup;
+			children = (
+				D6DD0E052ED125AF00CB7F23 /* MoodGearWidgetExtension.entitlements */,
+				D6DD0DBC2ED1245B00CB7F23 /* MoodTrackerApp Watch App */,
+				D6DD0DCA2ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests */,
+				D6DD0DD42ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests */,
+				D6DD0E292ED128B200CB7F23 /* MoodGearWidget */,
+				D6DD0DE92ED1247600CB7F23 /* Frameworks */,
+				D6DD0DBB2ED1245B00CB7F23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D6DD0DBB2ED1245B00CB7F23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6DD0DBA2ED1245B00CB7F23 /* MoodTrackerApp Watch App.app */,
+				D6DD0DC72ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests.xctest */,
+				D6DD0DD12ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests.xctest */,
+				D6DD0E262ED128B200CB7F23 /* MoodGearWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D6DD0DE92ED1247600CB7F23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6DD0DEA2ED1247700CB7F23 /* WidgetKit.framework */,
+				D6DD0DEC2ED1247700CB7F23 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D6DD0DB92ED1245B00CB7F23 /* MoodTrackerApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6DD0DDB2ED1245C00CB7F23 /* Build configuration list for PBXNativeTarget "MoodTrackerApp Watch App" */;
+			buildPhases = (
+				D6DD0DB62ED1245B00CB7F23 /* Sources */,
+				D6DD0DB72ED1245B00CB7F23 /* Frameworks */,
+				D6DD0DB82ED1245B00CB7F23 /* Resources */,
+				D6DD0E422ED41FB500CB7F23 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D6DD0DBC2ED1245B00CB7F23 /* MoodTrackerApp Watch App */,
+			);
+			name = "MoodTrackerApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "MoodTrackerApp Watch App";
+			productReference = D6DD0DBA2ED1245B00CB7F23 /* MoodTrackerApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D6DD0DC62ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6DD0DDE2ED1245C00CB7F23 /* Build configuration list for PBXNativeTarget "MoodTrackerApp Watch AppTests" */;
+			buildPhases = (
+				D6DD0DC32ED1245C00CB7F23 /* Sources */,
+				D6DD0DC42ED1245C00CB7F23 /* Frameworks */,
+				D6DD0DC52ED1245C00CB7F23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6DD0DC92ED1245C00CB7F23 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D6DD0DCA2ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests */,
+			);
+			name = "MoodTrackerApp Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "MoodTrackerApp Watch AppTests";
+			productReference = D6DD0DC72ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D6DD0DD02ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6DD0DE12ED1245C00CB7F23 /* Build configuration list for PBXNativeTarget "MoodTrackerApp Watch AppUITests" */;
+			buildPhases = (
+				D6DD0DCD2ED1245C00CB7F23 /* Sources */,
+				D6DD0DCE2ED1245C00CB7F23 /* Frameworks */,
+				D6DD0DCF2ED1245C00CB7F23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6DD0DD32ED1245C00CB7F23 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D6DD0DD42ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests */,
+			);
+			name = "MoodTrackerApp Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "MoodTrackerApp Watch AppUITests";
+			productReference = D6DD0DD12ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D6DD0E252ED128B200CB7F23 /* MoodGearWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6DD0E362ED128B400CB7F23 /* Build configuration list for PBXNativeTarget "MoodGearWidgetExtension" */;
+			buildPhases = (
+				D6DD0E222ED128B200CB7F23 /* Sources */,
+				D6DD0E232ED128B200CB7F23 /* Frameworks */,
+				D6DD0E242ED128B200CB7F23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D6DD0E292ED128B200CB7F23 /* MoodGearWidget */,
+			);
+			name = MoodGearWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MoodGearWidgetExtension;
+			productReference = D6DD0E262ED128B200CB7F23 /* MoodGearWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D6DD0DB22ED1245A00CB7F23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					D6DD0DB92ED1245B00CB7F23 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					D6DD0DC62ED1245C00CB7F23 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = D6DD0DB92ED1245B00CB7F23;
+					};
+					D6DD0DD02ED1245C00CB7F23 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = D6DD0DB92ED1245B00CB7F23;
+					};
+					D6DD0E252ED128B200CB7F23 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = D6DD0DB52ED1245A00CB7F23 /* Build configuration list for PBXProject "MoodTrackerApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D6DD0DB12ED1245A00CB7F23;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D6DD0DBB2ED1245B00CB7F23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6DD0DB92ED1245B00CB7F23 /* MoodTrackerApp Watch App */,
+				D6DD0DC62ED1245C00CB7F23 /* MoodTrackerApp Watch AppTests */,
+				D6DD0DD02ED1245C00CB7F23 /* MoodTrackerApp Watch AppUITests */,
+				D6DD0E252ED128B200CB7F23 /* MoodGearWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6DD0DB82ED1245B00CB7F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0DC52ED1245C00CB7F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0DCF2ED1245C00CB7F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0E242ED128B200CB7F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D6DD0DB62ED1245B00CB7F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0DC32ED1245C00CB7F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0DCD2ED1245C00CB7F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6DD0E222ED128B200CB7F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6DD0DC92ED1245C00CB7F23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6DD0DB92ED1245B00CB7F23 /* MoodTrackerApp Watch App */;
+			targetProxy = D6DD0DC82ED1245C00CB7F23 /* PBXContainerItemProxy */;
+		};
+		D6DD0DD32ED1245C00CB7F23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6DD0DB92ED1245B00CB7F23 /* MoodTrackerApp Watch App */;
+			targetProxy = D6DD0DD22ED1245C00CB7F23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D6DD0DD92ED1245C00CB7F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D6DD0DDA2ED1245C00CB7F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D6DD0DDC2ED1245C00CB7F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MoodTrackerApp Watch App/MoodTrackerApp Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MoodTrackerApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JacksonSanders.MoodTrackerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		D6DD0DDD2ED1245C00CB7F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MoodTrackerApp Watch App/MoodTrackerApp Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MoodTrackerApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JacksonSanders.MoodTrackerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		D6DD0DDF2ED1245C00CB7F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JacksonSanders.MoodTrackerApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodTrackerApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoodTrackerApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		D6DD0DE02ED1245C00CB7F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JacksonSanders.MoodTrackerApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodTrackerApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoodTrackerApp Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		D6DD0DE22ED1245C00CB7F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JacksonSanders.MoodTrackerApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "MoodTrackerApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		D6DD0DE32ED1245C00CB7F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JacksonSanders.MoodTrackerApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "MoodTrackerApp Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		D6DD0E372ED128B400CB7F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MoodGearWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoodGearWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MoodGearWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JacksonSanders.MoodTrackerApp.MoodGearWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		D6DD0E382ED128B400CB7F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MoodGearWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87P6H6SBTL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoodGearWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MoodGearWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JacksonSanders.MoodTrackerApp.MoodGearWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D6DD0DB52ED1245A00CB7F23 /* Build configuration list for PBXProject "MoodTrackerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6DD0DD92ED1245C00CB7F23 /* Debug */,
+				D6DD0DDA2ED1245C00CB7F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6DD0DDB2ED1245C00CB7F23 /* Build configuration list for PBXNativeTarget "MoodTrackerApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6DD0DDC2ED1245C00CB7F23 /* Debug */,
+				D6DD0DDD2ED1245C00CB7F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6DD0DDE2ED1245C00CB7F23 /* Build configuration list for PBXNativeTarget "MoodTrackerApp Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6DD0DDF2ED1245C00CB7F23 /* Debug */,
+				D6DD0DE02ED1245C00CB7F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6DD0DE12ED1245C00CB7F23 /* Build configuration list for PBXNativeTarget "MoodTrackerApp Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6DD0DE22ED1245C00CB7F23 /* Debug */,
+				D6DD0DE32ED1245C00CB7F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6DD0E362ED128B400CB7F23 /* Build configuration list for PBXNativeTarget "MoodGearWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6DD0E372ED128B400CB7F23 /* Debug */,
+				D6DD0E382ED128B400CB7F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D6DD0DB22ED1245A00CB7F23 /* Project object */;
+}
