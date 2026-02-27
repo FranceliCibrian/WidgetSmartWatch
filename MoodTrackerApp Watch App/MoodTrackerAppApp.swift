@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MoodTrackerApp_Watch_AppApp: App {
+    private let moodManager = MoodManager.shared
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(moodManager)
         }
     }
 }
