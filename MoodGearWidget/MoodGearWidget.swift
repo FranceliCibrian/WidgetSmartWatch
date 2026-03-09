@@ -51,7 +51,7 @@ struct MoodWidgetProvider: TimelineProvider {
 //    }
 }
 
-struct MoodWidgetEntryView: View {
+struct MoodWidgetGearEntryView: View {
     var entry: MoodWidgetEntry
     @Environment(\.widgetFamily) var family
     
@@ -87,16 +87,52 @@ struct MoodWidgetEntryView: View {
     }
 }
 
+struct MoodWidgetTreeEntryView: View {
+    var entry: MoodWidgetEntry
+    @Environment(\.widgetFamily) var family
+    
+    var body: some View {
+        switch family {
+        case .accessoryCircular:
+            MoodTreeView(moods: entry.moods)
+                .padding(4)
+                .widgetAccentable()
+        case .accessoryCorner:
+            MoodTreeView(moods: entry.moods)
+                .padding(2)
+                .widgetAccentable()
+        case .accessoryRectangular:
+            HStack {
+                MoodTreeView(moods: entry.moods)
+                    .frame(width: 40, height: 40)
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text("Moods")
+                        .font(.headline)
+                    Text("\(entry.moods.count)/6")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding(.horizontal, 8)
+            .widgetAccentable()
+        default:
+            MoodGearView(moods: entry.moods)
+                .widgetAccentable()
+        }
+    }
+}
+
 @main
 struct MoodWidget: Widget {
     let kind: String = "MoodWidget"
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: MoodWidgetProvider()) { entry in
-            MoodWidgetEntryView(entry: entry)
+            MoodWidgetTreeEntryView(entry: entry)
         }
         .configurationDisplayName("Mood Gear")
-        .description("Track your daily moods with a colorful gear.")
+        .description("Track your daily moods with a colorful tree.")
         .supportedFamilies([
             .accessoryCircular,
             .accessoryCorner,

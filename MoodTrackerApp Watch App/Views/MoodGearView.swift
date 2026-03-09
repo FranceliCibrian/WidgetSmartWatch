@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-
 struct MoodGearView: View {
     let moods: [Mood]
 
-    @StateObject private var viewModel = MoodGearViewModel()
+    @State private var viewModel = MoodGearViewModel()
 
     var body: some View {
+        let colors = viewModel.colors(for: moods)
+
         ZStack {
             Circle()
                 .fill(Color.gray.opacity(0.2))
@@ -21,7 +22,7 @@ struct MoodGearView: View {
 
             ForEach(0..<viewModel.toothCount, id: \.self) { index in
                 GearTooth(
-                    color: viewModel.color(for: index),
+                    color: colors[index],
                     angle: viewModel.angle(for: index)
                 )
             }
@@ -30,29 +31,13 @@ struct MoodGearView: View {
                 .stroke(Color.gray.opacity(0.5), lineWidth: 1.5)
                 .frame(width: 40, height: 40)
         }
-        .onAppear { viewModel.update(with: moods) }
-        .onChange(of: moods.count) { _ in
-            // if moods array changes frequently and you want full equality tracking:
-            // use onChange(of: moods) if Mood is Equatable
-            viewModel.update(with: moods)
-        }
-    }
-    
-    private func colorForTooth(at index: Int) -> Color {
-        let moodIndex = moods.count - 1 - index
-        
-        if moodIndex >= 0 && moodIndex < moods.count {
-            return moods[moodIndex].type.color
-        } else {
-            return Color.gray.opacity(0.3)
-        }
     }
 }
-//This comment is to test if the repo is fixed
+
 struct GearTooth: View {
     let color: Color
     let angle: Double
-    
+
     var body: some View {
         ToothShape()
             .fill(color)
@@ -67,7 +52,7 @@ struct ToothShape: Shape {
         var path = Path()
         let width = rect.width
         let height = rect.height
-        
+
         path.move(to: CGPoint(x: width * 0.3, y: height))
         path.addLine(to: CGPoint(x: width * 0.1, y: height * 0.3))
         path.addQuadCurve(
@@ -76,8 +61,7 @@ struct ToothShape: Shape {
         )
         path.addLine(to: CGPoint(x: width * 0.7, y: height))
         path.closeSubpath()
-        
+
         return path
     }
 }
-

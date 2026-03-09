@@ -13,8 +13,11 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 15) {
             // Gear visualization
-            MoodGearView(moods: moodManager.moods)
-                .frame(width: 100, height: 100)
+//            MoodGearView(moods: moodManager.moods)
+//                .frame(width: 100, height: 100)
+            
+            MoodTreeView(moods: moodManager.moods)
+                            .frame(width: 100, height: 100)
             
             Text("\(moodManager.moods.count)/6")
                 .font(.caption)
