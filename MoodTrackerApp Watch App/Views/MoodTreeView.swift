@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MoodTreeView: View {
-    let moods: [Mood]
+    let moods: [Mood?]
 
     @State private var viewModel = MoodTreeViewModel()
 

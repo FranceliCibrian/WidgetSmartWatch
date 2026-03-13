@@ -13,11 +13,13 @@ import WidgetKit
 
 @Observable
 class MoodManager {
-    var moods: [Mood] = []
+    var moods: [Mood?] = Array(repeating: nil, count: 5)
+    var nextIndex: Int = 0
     
     private let defaults = UserDefaults(suiteName: "group.com.JacksonSanders.MoodTrackerApp")!
     
     private let moodsKey = "moods"
+    private let nextIndexKey = "nextIndex"
     private let lastResetKey = "lastResetDate"
     
     static let shared = MoodManager()
@@ -30,34 +32,40 @@ class MoodManager {
     func addMood(_ type: MoodType) {
         checkAndResetDaily() 
         let newMood = Mood(type: type, timestamp: Date())
-        moods.append(newMood)
-
-        if moods.count > 6 { moods.removeFirst() }
+        moods[nextIndex] = newMood
+        nextIndex = (nextIndex + 1) % moods.count
 
         saveMoods()
         reloadWidget()
     }
     
     func clearAll() {
-        moods.removeAll()
+        moods = Array(repeating: nil, count: 5)
+        nextIndex = 0
         saveMoods()
         reloadWidget()
     }
     
     func getMoods() -> [Mood] {
-        return moods
+        moods.compactMap { $0 }
     }
     
     private func saveMoods() {
-        if let encoded = try? JSONEncoder().encode(moods) {
+        let compactMoods = moods.map { $0 }
+        if let encoded = try? JSONEncoder().encode(compactMoods) {
             defaults.set(encoded, forKey: moodsKey)
+            defaults.set(nextIndex, forKey: nextIndexKey)
         }
     }
     
     private func loadMoods() {
         if let data = defaults.data(forKey: moodsKey),
-           let decoded = try? JSONDecoder().decode([Mood].self, from: data) {
+           let decoded = try? JSONDecoder().decode([Mood?].self, from: data) {
             moods = decoded
+        }
+        
+        if defaults.object(forKey: nextIndexKey) != nil {
+            nextIndex = defaults.integer(forKey: nextIndexKey)
         }
     }
     
@@ -68,7 +76,8 @@ class MoodManager {
         if let lastReset = defaults.object(forKey: lastResetKey) as? Date {
             let lastResetDay = calendar.startOfDay(for: lastReset)
             if today > lastResetDay {
-                moods.removeAll()
+                moods = Array(repeating: nil, count: 5)
+                nextIndex = 0
                 saveMoods()
                 defaults.set(today, forKey: lastResetKey)
                 reloadWidget()

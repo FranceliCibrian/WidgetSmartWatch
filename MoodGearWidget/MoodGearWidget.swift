@@ -117,7 +117,7 @@ struct MoodWidgetTreeEntryView: View {
             .padding(.horizontal, 8)
             .widgetAccentable()
         default:
-            MoodGearView(moods: entry.moods)
+            MoodTreeView(moods: entry.moods)
                 .widgetAccentable()
         }
     }
