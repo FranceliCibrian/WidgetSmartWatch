@@ -6,38 +6,100 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct MoodTreeView: View {
     let moods: [Mood?]
+    var isWidget: Bool = false
 
-    @State private var viewModel = MoodTreeViewModel()
+    private let viewModel = MoodTreeViewModel()
+    private let ringLineWidth: CGFloat = 5
 
     var body: some View {
-        let colors = viewModel.colors(for: moods)
+        let segments = viewModel.segments(for: moods)
 
         ZStack {
-            Image("trunk")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 28, height: 46)
+            // Progress ring background
+            ArcSegment(startAngle: .degrees(0), endAngle: .degrees(360), lineWidth: ringLineWidth)
+                .fill(Color.gray.opacity(0.3))
 
-            ForEach(Array(viewModel.leaves.enumerated()), id: \.offset) { index, leaf in
-                maskedLeaf(leaf.assetName, color: colors[index])
-                    .frame(width: leaf.width, height: leaf.height)
-                    .offset(x: leaf.offsetX, y: leaf.offsetY)
+            // Colored segments
+            ForEach(segments.indices, id: \.self) { index in
+                ArcSegment(
+                    startAngle: .degrees(segments[index].startFraction * 360 - 90),
+                    endAngle: .degrees(segments[index].endFraction * 360 - 90),
+                    lineWidth: ringLineWidth
+                )
+                .fill(segments[index].color)
             }
-        }
-        .frame(width: 60, height: 60)
-    }
+            .widgetAccentable()
 
-    private func maskedLeaf(_ assetName: String, color: Color) -> some View {
-        color
-            .mask(
-                Image(assetName)
+            // Tree composed from asset images
+            ZStack {
+                Image("trunk")
+                    .renderingMode(.template)
                     .resizable()
-                    .scaledToFit()
-            )
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 34)
+                    .offset(y: 4)
+
+                Image("center-top-leaf")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 12, height: 14)
+                    .offset(x: 1, y: -14)
+
+                Image("top-right-leaf")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 14, height: 13)
+                    .offset(x: 10, y: -9)
+
+                Image("top-left-leaf")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 14, height: 13)
+                    .offset(x: -10, y: -9)
+
+                Image("bottom-right-leaf")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 13, height: 12)
+                    .offset(x: 11, y: 1)
+
+                Image("bottom-left-leaf")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 13, height: 12)
+                    .offset(x: -11, y: 1)
+            }
+            .foregroundStyle(.white)
+            .scaleEffect(0.7)
+        }
+        .aspectRatio(1, contentMode: .fit)
     }
 }
 
+struct ArcSegment: Shape {
+    let startAngle: Angle
+    let endAngle: Angle
+    let lineWidth: CGFloat
+
+    func path(in rect: CGRect) -> Path {
+        let radius = min(rect.width, rect.height) / 2
+        let innerRadius = radius - lineWidth
+        let center = CGPoint(x: rect.midX, y: rect.midY)
+
+        var path = Path()
+        path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        path.addArc(center: center, radius: innerRadius, startAngle: endAngle, endAngle: startAngle, clockwise: true)
+        path.closeSubpath()
+        return path
+    }
+}
 

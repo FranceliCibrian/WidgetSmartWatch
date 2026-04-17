@@ -7,36 +7,29 @@
 import SwiftUI
 import Observation
 
+struct MoodSegment {
+    let color: Color
+    let startFraction: CGFloat
+    let endFraction: CGFloat
+}
+
 @Observable
 final class MoodTreeViewModel {
 
-    let fallbackColor = Color.gray.opacity(0.25)
-
-    // Clockwise from top
-    let leaves: [LeafLayout] = [
-        LeafLayout(assetName: "center-top-leaf",  width: 16, height: 16, offsetX: 0,   offsetY: -24),
-        LeafLayout(assetName: "top-right-leaf",   width: 16, height: 16, offsetX: 10,  offsetY: -16),
-        LeafLayout(assetName: "bottom-right-leaf",width: 16, height: 16, offsetX: 8,   offsetY: -2),
-        LeafLayout(assetName: "bottom-left-leaf", width: 16, height: 16, offsetX: -8,  offsetY: -2),
-        LeafLayout(assetName: "top-left-leaf",    width: 16, height: 16, offsetX: -10, offsetY: -16)
-    ]
-
-    func colors(for moods: [Mood?]) -> [Color] {
-
-        leaves.indices.map { index in
-            if let mood = moods[index] {
-                return mood.type.color
-            } else {
-                return fallbackColor
+    func segments(for moods: [Mood?]) -> [MoodSegment] {
+        let totalSlots = moods.count
+        guard totalSlots > 0 else { return [] }
+        let slotSize = 1.0 / CGFloat(totalSlots)
+        var result: [MoodSegment] = []
+        for (index, mood) in moods.enumerated() {
+            if let mood = mood {
+                result.append(MoodSegment(
+                    color: mood.type.color,
+                    startFraction: CGFloat(index) * slotSize,
+                    endFraction: CGFloat(index + 1) * slotSize
+                ))
             }
         }
+        return result
     }
-}
-
-struct LeafLayout {
-    let assetName: String
-    let width: CGFloat
-    let height: CGFloat
-    let offsetX: CGFloat
-    let offsetY: CGFloat
 }

@@ -11,21 +11,13 @@ struct ContentView: View {
     @Environment(MoodManager.self) private var moodManager
     
     var body: some View {
-        VStack(spacing: 15) {
-            // Gear visualization
-//            MoodGearView(moods: moodManager.moods)
-//                .frame(width: 100, height: 100)
-            
+        VStack(spacing: 6) {
             MoodTreeView(moods: moodManager.moods)
-                            .frame(width: 100, height: 100)
-            
-            Text("\(moodManager.moods.count)/6")
-                .font(.caption)
-                .foregroundColor(.gray)
+                .frame(width: 55, height: 55)
             
             // Mood buttons
-            VStack(spacing: 10) {
-                HStack(spacing: 10) {
+            VStack(spacing: 6) {
+                HStack(spacing: 8) {
                     MoodButton(color: .blue, label: "😌") {
                         moodManager.addMood(.blue)
                     }
@@ -33,7 +25,7 @@ struct ContentView: View {
                         moodManager.addMood(.green)
                     }
                 }
-                HStack(spacing: 10) {
+                HStack(spacing: 8) {
                     MoodButton(color: .yellow, label: "😐") {
                         moodManager.addMood(.yellow)
                     }
@@ -47,11 +39,11 @@ struct ContentView: View {
                 Button("Clear") {
                     moodManager.clearAll()
                 }
-                .font(.caption)
+                .font(.caption2)
                 .foregroundColor(.red)
             }
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 
@@ -63,8 +55,8 @@ struct MoodButton: View {
     var body: some View {
         Button(action: action) {
             Text(label)
-                .font(.title3)
-                .frame(width: 70, height: 40)
+                .font(.body)
+                .frame(width: 60, height: 32)
                 .background(color.opacity(0.3))
                 .cornerRadius(8)
                 .overlay(

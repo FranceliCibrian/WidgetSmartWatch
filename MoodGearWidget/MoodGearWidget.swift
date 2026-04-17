@@ -11,7 +11,7 @@ import SwiftUI
 
 struct MoodWidgetEntry: TimelineEntry {
     let date: Date
-    let moods: [Mood]
+    let moods: [Mood?]
 }
 
 struct MoodWidgetProvider: TimelineProvider {
@@ -37,13 +37,13 @@ struct MoodWidgetProvider: TimelineProvider {
         completion(timeline)
     }
     
-    private func loadMoods() -> [Mood] {
+    private func loadMoods() -> [Mood?] {
         let defaults = UserDefaults(suiteName: "group.com.JacksonSanders.MoodTrackerApp")
         if let data = defaults?.data(forKey: "moods"),
-            let decoded = try? JSONDecoder().decode([Mood].self, from: data) {
+            let decoded = try? JSONDecoder().decode([Mood?].self, from: data) {
             return decoded
         }
-        return []
+        return Array(repeating: nil, count: 5)
     }
 
 //    func relevances() async -> WidgetRelevances<Void> {
@@ -55,25 +55,29 @@ struct MoodWidgetGearEntryView: View {
     var entry: MoodWidgetEntry
     @Environment(\.widgetFamily) var family
     
+    private var filledCount: Int {
+        entry.moods.compactMap { $0 }.count
+    }
+    
     var body: some View {
         switch family {
         case .accessoryCircular:
-            MoodGearView(moods: entry.moods)
+            MoodGearView(moods: entry.moods.compactMap { $0 })
                 .padding(4)
                 .widgetAccentable()
         case .accessoryCorner:
-            MoodGearView(moods: entry.moods)
+            MoodGearView(moods: entry.moods.compactMap { $0 })
                 .padding(2)
                 .widgetAccentable()
         case .accessoryRectangular:
             HStack {
-                MoodGearView(moods: entry.moods)
+                MoodGearView(moods: entry.moods.compactMap { $0 })
                     .frame(width: 40, height: 40)
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Moods")
                         .font(.headline)
-                    Text("\(entry.moods.count)/6")
+                    Text("\(filledCount)/6")
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
@@ -81,7 +85,7 @@ struct MoodWidgetGearEntryView: View {
             .padding(.horizontal, 8)
             .widgetAccentable()
         default:
-            MoodGearView(moods: entry.moods)
+            MoodGearView(moods: entry.moods.compactMap { $0 })
                 .widgetAccentable()
         }
     }
@@ -91,25 +95,29 @@ struct MoodWidgetTreeEntryView: View {
     var entry: MoodWidgetEntry
     @Environment(\.widgetFamily) var family
     
+    private var filledCount: Int {
+        entry.moods.compactMap { $0 }.count
+    }
+    
     var body: some View {
         switch family {
         case .accessoryCircular:
-            MoodTreeView(moods: entry.moods)
+            MoodTreeView(moods: entry.moods, isWidget: true)
                 .padding(4)
                 .widgetAccentable()
         case .accessoryCorner:
-            MoodTreeView(moods: entry.moods)
+            MoodTreeView(moods: entry.moods, isWidget: true)
                 .padding(2)
                 .widgetAccentable()
         case .accessoryRectangular:
             HStack {
-                MoodTreeView(moods: entry.moods)
+                MoodTreeView(moods: entry.moods, isWidget: true)
                     .frame(width: 40, height: 40)
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Moods")
                         .font(.headline)
-                    Text("\(entry.moods.count)/6")
+                    Text("\(filledCount)/5")
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
@@ -117,7 +125,7 @@ struct MoodWidgetTreeEntryView: View {
             .padding(.horizontal, 8)
             .widgetAccentable()
         default:
-            MoodTreeView(moods: entry.moods)
+            MoodTreeView(moods: entry.moods, isWidget: true)
                 .widgetAccentable()
         }
     }
@@ -131,6 +139,7 @@ struct MoodWidget: Widget {
         StaticConfiguration(kind: kind, provider: MoodWidgetProvider()) { entry in
             MoodWidgetTreeEntryView(entry: entry)
         }
+        
         .configurationDisplayName("Mood Gear")
         .description("Track your daily moods with a colorful tree.")
         .supportedFamilies([
