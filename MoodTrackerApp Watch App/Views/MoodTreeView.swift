@@ -19,15 +19,15 @@ struct MoodTreeView: View {
         let segments = viewModel.segments(for: moods)
 
         ZStack {
-            // Progress ring background
-            ArcSegment(startAngle: .degrees(0), endAngle: .degrees(360), lineWidth: ringLineWidth)
+            // Progress arc background
+            ArcSegment(startAngle: .degrees(180), endAngle: .degrees(360), lineWidth: ringLineWidth)
                 .fill(Color.gray.opacity(0.3))
 
             // Colored segments
             ForEach(segments.indices, id: \.self) { index in
                 ArcSegment(
-                    startAngle: .degrees(segments[index].startFraction * 360 - 90),
-                    endAngle: .degrees(segments[index].endFraction * 360 - 90),
+                    startAngle: .degrees(segments[index].startFraction * 180 + 180),
+                    endAngle: .degrees(segments[index].endFraction * 180 + 180),
                     lineWidth: ringLineWidth
                 )
                 .fill(segments[index].color)
